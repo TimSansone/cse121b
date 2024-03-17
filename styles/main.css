@@ -60,7 +60,7 @@
   }
   
   input[type='button'] {
-    padding: 1rem;
+    padding: 1.2rem;
     background-color: darkgreen;;
     color: white;
     border: none;
@@ -118,22 +118,6 @@
     justify-content: center;
   }
   
-  #section1 {
-    background-color: lightgray;
-  }
-  
-  #section2 {
-    background-color: lightsalmon;
-  }
-  
-  #section2 div {
-    margin-bottom: 2rem;
-  }
-  
-  #section3 {
-    background-color: lightblue;
-  }
-
   nav {
     background-color: cornsilk;
     width: 100%;

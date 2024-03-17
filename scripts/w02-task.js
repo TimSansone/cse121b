@@ -30,14 +30,14 @@ imageElement.setAttribute("alt", `Profile image of ${fullName}`);
 /* Step 5 - Array */
 
 const favoriteFoods = ["Lasagna", "Pizza", "Fetuccini Alfredo", "Key Lime PIe"];
-foodElement.innerHTML = favoriteFoods.join();
+foodElement.innerHTML = favoriteFoods.join(', ');
 
-const newFood = "Chicken wings";
+const newFood = "Pastrami Sandwich";
 favoriteFoods.push(newFood);
 foodElement.innerHTML += `<br>${newFood}`;
 
 favoriteFoods.shift();
-foodElement.innerHTML += "<br>" + favoriteFoods.join();
+foodElement.innerHTML += "<br>" + favoriteFoods.join(', ');
 
 favoriteFoods.pop();
-foodElement.innerHTML += "<br>" + favoriteFoods.join();
+foodElement.innerHTML += "<br>" + favoriteFoods.join(', ');

@@ -4,8 +4,8 @@
 /* Function Definition - Add Numbers */
 function add(number1, number2) {
     return number1 + number2;
-  }
-  
+}
+
 function addNumbers() {
   let number1 = Number(document.querySelector('#add1').value);
   let number2 = Number(document.querySelector('#add2').value);
@@ -45,7 +45,6 @@ const multiplyNumbers = () => {
 };
 document.querySelector('#multiplyNumbers').addEventListener('click', multiplyNumbers);
  
-  
 /* Open Function Use - Divide Numbers */
   
 const divide = (number1, number2) => {

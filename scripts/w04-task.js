@@ -8,57 +8,69 @@ let myProfile = {
     name: 'Tim Sansone',
     photo: 'images/me.png',
     favoriteFoods: ['Lasagna', 'Pizza', 'Fried Chicken', 'Chicken Parmigana', 'Key Lime Pie'],
-    hobbies: ['Liverpool soccer', 'Baseball', 'Cooking'],
-    placeLived: [],
+    hobbies: ['Traveling', 'Sports', 'Cooking'],
+    placesLived: [],
 };
 
 /* Populate Profile Object with placesLive objects */
 
-myProfile.placeLived.push({ place: 'Orlando, FL', length: '30 years' });
-myProfile.placeLived.push({ place: 'Deltona, FL', length: '6 years' });
-myProfile.placeLived.push({ place: 'Winter Garden, FL', length: '6 years' });
-myProfile.placeLived.push({ place: 'Saint Cloud, FL', length: '10 years' });
-
+myProfile.placesLived.push(
+    {
+        place: 'Orlando, FL',
+        length: '30 years'
+    },
+    {
+        place: 'Deltona, FL',
+        length: '6 years'
+    },
+    {
+        place: 'Winter Garden, FL',
+        length: '6 years'
+    },
+    {
+        place: 'Saint Cloud, FL',
+        length: '10 years'
+    }
+);
 
 /* DOM Manipulation - Output */
 
 /* Name */
 
-const nameElement = document.getElementById('name');
-nameElement.innerText = myProfile.name;
+document.querySelector('#name').textContent = myProfile.name;
 
 /* Photo with attributes */
 
-const imageElement = document.getElementById('photo');
-imageElement.setAttribute('src', myProfile.photo);
-imageElement.setAttribute('alt', myProfile.name);
+document.querySelector('#photo').src = myProfile.photo;
+document.querySelector('#photo').alt = myProfile.name;
 
 /* Favorite Foods List*/
 
-const foodList = document.getElementById('favorite-foods');
-myProfile.favoriteFoods.forEach((food) => {
-    const foodElement = document.createElement('li');
-    foodElement.textContent = food;
-    foodList.appendChild(foodElement);
+myProfile.favoriteFoods.forEach(food => {
+    let li = document.createElement('li');
+    li.textContent = food;
+    document.querySelector('#favorite-foods').appendChild(li);
 });
 
 /* Hobbies List */
 
-const hobbiesList = document.getElementById('hobbies');
-myProfile.hobbies.forEach((hobby) => {
-    const hobbyElement = document.createElement('li');
-    hobbyElement.textContent = hobby;
-    hobbiesList.appendChild(hobbyElement);
+myProfile.hobbies.forEach(hobby => {
+    let li = document.createElement('li');
+    li.textContent = hobby;
+    document.querySelector('#hobbies').appendChild(li);
 });
 
 /* Places Lived DataList */
 
-const placesElement = document.getElementById('places-lived');
-myProfile.placeLived.forEach(place => {
-    const placeElement = document.createElement('dl');
-    const lengthElement = document.createElement('dt');
-    placeElement.textContent = place.place
-    lengthElement.textContent = place.length
+let locationsLived = document.querySelector('#places-lived');
 
-    placesElement.append(placeElement, lengthElement)
-})
+myProfile.placesLived.forEach(place => {
+    let dt = document.createElement('dt');
+    dt.textContent = place.place;
+
+    let dd = document.createElement('dd');
+    dd.textContent = place.length;
+
+    locationsLived.appendChild(dt);
+    locationsLived.appendChild(dd);
+});

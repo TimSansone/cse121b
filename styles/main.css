@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@
   /* HTML Selectors */
   body {
     font-family: 'OpenSans', sans-serif;
+    background-color: lightblue;
   }
   
   h1, h2 {
@@ -34,9 +36,14 @@
   }
 
 img {
-  width: 350px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 400px;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2), 0 30px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
+}
+
+#filtered {
+  margin-left: 40px;
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
 }
     
   section {

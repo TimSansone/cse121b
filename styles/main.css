@@ -44,6 +44,20 @@ img {
 #filtered {
   margin-left: 40px;
     box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 40px;
+}
+
+#temples {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Gap between items in a column */
 }
     
   section {

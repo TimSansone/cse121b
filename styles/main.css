@@ -8,8 +8,11 @@
   /* HTML Selectors */
   body {
     font-family: 'OpenSans', sans-serif;
-    background-color: lightblue;
   }
+
+body.w5-task-page {
+    background-color: lightblue;
+}
   
   h1, h2 {
     text-align: center;

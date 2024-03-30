@@ -65,4 +65,3 @@ const filterTemples = (temples) => {
 filterElement.addEventListener('change', () => filterTemples(templeList))
 
 getTemples();
-

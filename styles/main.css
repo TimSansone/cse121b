@@ -9,10 +9,6 @@
   body {
     font-family: 'OpenSans', sans-serif;
   }
-
-body.w05-task.html {
-    background-color: lightblue;
-}
   
   h1, h2 {
     text-align: center;

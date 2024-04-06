@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLB Transactions</title>
+</head>
+<body>
+  <h1>MLB Transactions</h1>
+  <button id="fetchButton">Get Transactions</button>
+  <div id="transactionData"></div>
+
+  <script>
+ 
+const sport_code = 'mlb';
+const start_date = '20240326';
+const end_date = '20241231';
+
+document.getElementById('fetchButton').addEventListener('click', function() {
+  fetch(`https://lookup-service-prod.mlb.com/json/named.transaction_all.bam?sport_code=${sport_code}&start_date=${start_date}&end_date=${end_date}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      filterAndDisplayData(data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+});
+
+function filterAndDisplayData(data) {
+  const transactionDataElement = document.getElementById('transactionData');
+  const filteredData = data.transaction_all.queryResults.row.map(transaction => {
+    return {
+      team: transaction.team,
+      trans_date: transaction.trans_date,
+      name_display_last_first: transaction.name_display_last_first,
+      note: transaction.note
+    };
+  });
+
+  // Display filtered data
+  let html = '';
+  filteredData.forEach(transaction => {
+    html += `
+      <p><strong>Team:</strong> ${transaction.team}</p>
+      <p><strong>Transaction Date:</strong> ${transaction.trans_date}</p>
+      <p><strong>Name Display (Last, First):</strong> ${transaction.name_display_last_first}</p>
+      <p><strong>Note:</strong> ${transaction.note}</p>
+      <hr>
+    `;
+  });
+  transactionDataElement.innerHTML = html;
+}
+  </script>
+
+</body>
+</html>
